@@ -6,13 +6,15 @@ import CreateOrder from './features/order/CreateOrder';
 import Order from './features/order/Order';
 import AppLayout from './ui/AppLayout';
 
+import { loader as menuLoader } from './features/menu/menuLoader';
+
 const router = createBrowserRouter([
 	{
 		element: <AppLayout />,
 		children: [
 			{ path: '/', element: <Home /> },
 			{ path: '/cart', element: <Cart /> },
-			{ path: '/menu', element: <Menu /> },
+			{ path: '/menu', element: <Menu />, loader: menuLoader },
 			{ path: '/order/new', element: <CreateOrder /> },
 			{ path: '/order/:orderId', element: <Order /> },
 		]
