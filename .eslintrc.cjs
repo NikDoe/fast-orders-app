@@ -23,6 +23,7 @@ module.exports = {
       "code": 80, 
       "ignoreComments": true,
       "ignoreUrls": true,
+      "ignoreRegExpLiterals": true,
       "tabWidth": 2
     }]
   },
