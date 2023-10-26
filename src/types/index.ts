@@ -20,7 +20,7 @@ export type TPizza = {
 //Order
 export type TOrder = {
     cart: TCartItem[];
-    customer: string
+    customer: string;
     estimatedDelivery: string;
     id: string;
     orderPrice: number;
@@ -33,4 +33,12 @@ export type TOrderItem = {
     quantity: number;
     name: string;
     totalPrice: number;
+}
+
+export type TFormData = {
+    address: string;
+    customer: string;
+    phone: string;
+    priority: string;
+    cart: string;
 }

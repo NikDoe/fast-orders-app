@@ -9,6 +9,9 @@ import Error from './ui/Error';
 
 import { loader as menuLoader } from './features/menu/menuLoader';
 import { loader as orderLoader } from './features/order/orderLoader';
+import { 
+	action as createOrderAction 
+} from './features/order/createOrderAction';
 
 const router = createBrowserRouter([
 	{
@@ -23,7 +26,11 @@ const router = createBrowserRouter([
 				loader: menuLoader,
 				errorElement : <Error /> 
 			},
-			{ path: '/order/new', element: <CreateOrder /> },
+			{ 
+				path: '/order/new', 
+				element: <CreateOrder />,
+				action: createOrderAction,
+			},
 			{ 
 				path: '/order/:orderId', 
 				element: <Order />,
