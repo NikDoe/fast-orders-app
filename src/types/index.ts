@@ -1,9 +1,10 @@
 //Cart
 export type TCartItem = {
-    pizzaId: string;
+    pizzaId: number;
     name: string; 
     quantity: number;
     totalPrice: number;
+    unitPrice: number;
 }
 
 //Pizza
@@ -17,6 +18,17 @@ export type TPizza = {
 }
 
 //Order
+export type TOrder = {
+    cart: TCartItem[];
+    customer: string
+    estimatedDelivery: string;
+    id: string;
+    orderPrice: number;
+    priority: boolean;
+    priorityPrice: number;
+    status: string;
+}
+
 export type TOrderItem = {
     quantity: number;
     name: string;

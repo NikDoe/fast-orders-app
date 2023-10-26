@@ -12,7 +12,7 @@ export async function getMenu() {
 
 export async function getOrder(id: string) {
 	const res = await fetch(`${API_URL}/order/${id}`);
-	if (!res.ok) throw Error(`Couldn't find order #${id}`);
+	if (!res.ok) throw Error(`Заказа #${id} не существует`);
 
 	const { data } = await res.json();
 	return data;

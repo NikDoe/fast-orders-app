@@ -5,9 +5,10 @@ import Menu from './features/menu/Menu';
 import CreateOrder from './features/order/CreateOrder';
 import Order from './features/order/Order';
 import AppLayout from './ui/AppLayout';
+import Error from './ui/Error';
 
 import { loader as menuLoader } from './features/menu/menuLoader';
-import Error from './ui/Error';
+import { loader as orderLoader } from './features/order/orderLoader';
 
 const router = createBrowserRouter([
 	{
@@ -23,7 +24,11 @@ const router = createBrowserRouter([
 				errorElement : <Error /> 
 			},
 			{ path: '/order/new', element: <CreateOrder /> },
-			{ path: '/order/:orderId', element: <Order /> },
+			{ 
+				path: '/order/:orderId', 
+				element: <Order />,
+				loader: orderLoader
+			},
 		]
 	},
 ]);
