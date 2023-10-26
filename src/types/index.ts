@@ -42,3 +42,7 @@ export type TFormData = {
     priority: string;
     cart: string;
 }
+
+export type TCreateOrderErrors = {
+	phone?: string;
+}
